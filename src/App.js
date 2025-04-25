@@ -1,33 +1,42 @@
+import './categories.styles.scss';
+
 const App = () => {
 
   const categories = [
     {
       id: 1,
-      name: 'Strings'
+      name: 'strings',
+      imageUrl: '/images/strings.jpg'
     },
     {
       id: 2,
-      name: 'Brass'
+      name: 'brass',
+      imageUrl: '/images/brass.jpg'
     },
     {
       id: 3,
-      name: 'Woodwind'
+      name: 'woodwind',
+      imageUrl: '/images/woodwind.jpg'
     },
     {
       id: 4,
-      name: 'Keys'
+      name: 'keys',
+      imageUrl: '/images/keys.jpg'
     },
     {
       id: 5,
-      name: 'Percussion'
+      name: 'percussion',
+      imageUrl: '/images/percussion.jpg'
     }
   ];
 
   return (
     <div className='categories-container'>
-      { categories.map(({ id, name }) => (
-        <div className='category-container' key={ id }>
-          {/* <img /> */}
+      { categories.map(({ id, name, imageUrl }) => (
+        <div key={ id } className='category-container'>
+          <div className='background-image' style={{
+            backgroundImage: `url(${imageUrl})`
+          }} />
           <div className='category-body-container'>
             <h2>{ name }</h2>
             <p>Shop Now</p>
